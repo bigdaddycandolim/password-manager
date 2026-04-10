@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PASSWORD MANAGER - VIP BLUE</title>
     <style>
-        /* Base font increase by 15% */
+        /* 15% Font Increase */
         html { font-size: 115%; }
 
         :root { 
@@ -17,153 +17,56 @@
         }
 
         body { 
-            /* REPLACE 'YOUR_GITHUB_RAW_URL' WITH YOUR PNG LINK */
-            background: 
-                linear-gradient(rgba(2, 6, 23, 0.85), rgba(2, 6, 23, 0.85)), 
-                url('YOUR_GITHUB_RAW_URL');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            background-repeat: no-repeat;
-            
-            background-color: var(--obsidian); 
-            color: var(--text); 
-            font-family: 'Segoe UI', sans-serif; 
-            margin: 0; 
-            display: flex; 
-            justify-content: center; 
-            min-height: 100vh; 
-            padding: 20px; 
-            box-sizing: border-box; 
+            background: linear-gradient(rgba(2, 6, 23, 0.85), rgba(2, 6, 23, 0.85)), 
+                        url('YOUR_GITHUB_PNG_RAW_URL_HERE');
+            background-size: cover; background-position: center; background-attachment: fixed;
+            background-color: var(--obsidian); color: var(--text); font-family: 'Segoe UI', sans-serif; 
+            margin: 0; display: flex; justify-content: center; min-height: 100vh; padding: 20px; box-sizing: border-box; 
         }
         
         .container { 
-            width: 100%; 
-            max-width: 1000px; 
-            background: rgba(15, 23, 42, 0.9); /* Glass effect */
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--deep-blue); 
-            border-radius: 12px; 
-            padding: 40px;
-            box-shadow: 0 0 50px rgba(0, 210, 255, 0.15); 
-            align-self: center;
+            width: 100%; max-width: 1000px; background: rgba(15, 23, 42, 0.9); 
+            backdrop-filter: blur(10px); border: 1px solid var(--deep-blue); 
+            border-radius: 12px; padding: 40px; box-shadow: 0 0 50px rgba(0, 210, 255, 0.15); align-self: center;
         }
 
-        h2 { 
-            color: var(--blue); 
-            text-align: center; 
-            text-transform: uppercase; 
-            letter-spacing: 4px; 
-            margin-bottom: 30px; 
-            text-shadow: 0 0 10px rgba(0, 210, 255, 0.3);
-            font-size: 1.8rem; /* Scaled */
-        }
-        
+        h2 { color: var(--blue); text-align: center; text-transform: uppercase; letter-spacing: 4px; font-size: 1.8rem; text-shadow: 0 0 10px rgba(0, 210, 255, 0.3); }
         .form-box { max-width: 350px; margin: 0 auto; text-align: center; }
         
         input { 
-            width: 100%; 
-            padding: 16px; 
-            margin: 12px 0; 
-            background: #000; 
-            border: 1px solid #1e293b; 
-            color: #fff; 
-            border-radius: 8px; 
-            box-sizing: border-box;
-            font-size: 1rem; 
-            outline: none; 
-            transition: 0.3s;
+            width: 100%; padding: 16px; margin: 12px 0; background: #000; border: 1px solid #1e293b; 
+            color: #fff; border-radius: 8px; box-sizing: border-box; font-size: 1rem; outline: none; transition: 0.3s;
         }
         input:focus { border-color: var(--blue); box-shadow: 0 0 10px rgba(0, 210, 255, 0.2); }
         
         button { 
-            width: 100%; 
-            padding: 16px; 
-            background: linear-gradient(45deg, var(--deep-blue), var(--blue)); 
-            color: #fff; 
-            border: none; 
-            border-radius: 8px; 
-            font-weight: bold; 
-            cursor: pointer; 
-            margin-top: 15px; 
-            text-transform: uppercase; 
-            transition: 0.3s;
-            font-size: 0.95rem;
+            width: 100%; padding: 16px; background: linear-gradient(45deg, var(--deep-blue), var(--blue)); 
+            color: #fff; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; 
+            margin-top: 15px; text-transform: uppercase; transition: 0.3s; font-size: 0.95rem;
         }
         button:hover { filter: brightness(1.2); transform: scale(1.02); }
 
-        .link-btn { 
-            background: none; 
-            color: #94a3b8; 
-            font-size: 0.85rem; 
-            border: none; 
-            cursor: pointer; 
-            margin-top: 15px; 
-            text-decoration: underline; 
-        }
+        .link-btn { background: none; color: #94a3b8; font-size: 0.85rem; border: none; cursor: pointer; margin-top: 15px; text-decoration: underline; }
 
-        /* DASHBOARD SECTION */
         #dashboard, #change-pass-box { display: none; }
+        .role-badge { display: inline-block; padding: 6px 18px; background: var(--blue); color: #000; border-radius: 20px; font-weight: bold; font-size: 0.8rem; margin-bottom: 20px; text-transform: uppercase; }
         
-        .role-badge { 
-            display: inline-block; 
-            padding: 6px 18px; 
-            background: var(--blue); 
-            color: #000; 
-            border-radius: 20px; 
-            font-weight: bold; 
-            font-size: 0.8rem; 
-            margin-bottom: 20px; 
-            text-transform: uppercase;
-        }
-        
-        .table-container { 
-            overflow-x: auto; 
-            margin-top: 20px; 
-            border-radius: 8px; 
-            border: 1px solid #1e293b; 
-        }
-        
+        .table-container { overflow-x: auto; margin-top: 20px; border-radius: 8px; border: 1px solid #1e293b; }
         table { width: 100%; border-collapse: collapse; min-width: 750px; }
-        
-        th { 
-            background: #000; 
-            color: var(--blue); 
-            padding: 18px; 
-            text-align: left; 
-            font-size: 0.85rem; 
-            text-transform: uppercase;
-        }
-        
+        th { background: #000; color: var(--blue); padding: 18px; text-align: left; font-size: 0.85rem; }
         td { padding: 18px; border-bottom: 1px solid #1e293b; font-size: 0.95rem; }
-        
         .ip-addr { color: var(--blue); font-family: 'Courier New', monospace; font-weight: bold; }
-        .pass-chip { 
-            background: #000; 
-            padding: 5px 10px; 
-            border: 1px solid #1e293b; 
-            color: #38bdf8; 
-            border-radius: 4px; 
-            font-family: monospace; 
-        }
-        
-        .logout-btn { 
-            background: #1e293b; 
-            color: #fff; 
-            width: auto; 
-            padding: 12px 30px; 
-            margin-top: 35px; 
-            font-size: 0.9rem;
-        }
+        .pass-chip { background: #000; padding: 5px 10px; border: 1px solid #1e293b; color: #38bdf8; border-radius: 4px; font-family: monospace; }
+        .logout-btn { background: #1e293b; color: #fff; width: auto; padding: 12px 30px; margin-top: 35px; }
     </style>
 </head>
 <body>
 
 <div class="container">
     <div id="login-section" class="form-box">
-        <h2>PASSWORD MANAGER</h2>
-        <input type="text" id="uid" placeholder="USER ID">
-        <input type="password" id="pass" placeholder="PASSWORD">
+        <h2>BLUE TERMINAL</h2>
+        <input type="text" id="uid" placeholder="USER ID" onkeydown="if(event.key==='Enter') handleAction('login')">
+        <input type="password" id="pass" placeholder="PASSWORD" onkeydown="if(event.key==='Enter') handleAction('login')">
         <button onclick="handleAction('login')">LOGIN</button>
         <button class="link-btn" onclick="toggleForm('change')">Change Password?</button>
         <p id="status-msg" style="color: #38bdf8; margin-top: 20px; font-size: 0.9rem;"></p>
@@ -171,9 +74,9 @@
 
     <div id="change-pass-box" class="form-box">
         <h2>UPDATE KEY</h2>
-        <input type="text" id="c-uid" placeholder="USER ID">
-        <input type="password" id="c-old" placeholder="CURRENT PASSWORD">
-        <input type="password" id="c-new" placeholder="NEW PASSWORD">
+        <input type="text" id="c-uid" placeholder="USER ID" onkeydown="if(event.key==='Enter') handleAction('change')">
+        <input type="password" id="c-old" placeholder="CURRENT PASSWORD" onkeydown="if(event.key==='Enter') handleAction('change')">
+        <input type="password" id="c-new" placeholder="NEW PASSWORD" onkeydown="if(event.key==='Enter') handleAction('change')">
         <button onclick="handleAction('change')">Update Password</button>
         <button class="link-btn" onclick="toggleForm('login')">Back to Login</button>
     </div>
@@ -181,7 +84,7 @@
     <div id="dashboard">
         <div style="text-align: center;">
             <div class="role-badge" id="badge">ROLE: PENDING</div>
-            <h2>PASSWORD MANAGER</h2>
+            <h2>SECURE DATABASE</h2>
         </div>
         <div class="table-container">
             <table>
@@ -189,12 +92,13 @@
                 <tbody id="tbody-rows"></tbody>
             </table>
         </div>
-        <button class="logout-btn" onclick="location.reload()">LOGOUT TERMINAL</button>
+        <button class="logout-btn" onclick="location.reload()">LOGOUT</button>
     </div>
 </div>
 
 <script>
-    const APP_URL = "https://script.google.com/macros/s/AKfycbze-ZHDiOCYZsLeUzVWSi8AdfhwlOb6v65osXY6nCJh0WmAcoub0LN014YsME6Ee9U/exec";
+    // --- UPDATE YOUR URL HERE ---
+    const APP_URL = "https://script.google.com/macros/s/AKfycbxnaDsgl5p5iO5ZXXJ7vlqSRJ2awAYS4Jo1ydAnHq5UZ6fvfTfJ16KGxY70SaShbfAo/exec";
 
     function toggleForm(type) {
         document.getElementById('login-section').style.display = (type === 'login') ? 'block' : 'none';
@@ -219,7 +123,8 @@
             url += `&uid=${encodeURIComponent(u)}&pass=${encodeURIComponent(op)}&newpass=${encodeURIComponent(np)}`;
         }
 
-        status.innerText = "Connecting to Cyber-Sheet...";
+        status.style.color = "var(--blue)";
+        status.innerText = "Processing Command...";
 
         try {
             const response = await fetch(url);
@@ -238,7 +143,8 @@
                 }
             }
         } catch (err) {
-            status.innerText = "Connection Failed: Check script deployment.";
+            status.style.color = "#ff4444";
+            status.innerText = "Connection Failed.";
         }
     }
 
